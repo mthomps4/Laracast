@@ -63,6 +63,8 @@
                 margin-bottom: 30px;
             }
         </style>
+
+        <link href="css/app.css" rel="stylesheet" type="text/css" /> 
     </head>
     <body>
       <div>
