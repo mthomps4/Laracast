@@ -1,8 +1,7 @@
 <?php
 use Illuminate\Database\Seeder;
-use database\seeds\ContactsTableSeeder;
 
-class DatabaseSeeder extends Seeder
+class CardsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +11,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        $this->call(CardsTableSeeder::class);
+        DB::table('cards')->insert(['title' => 'My New Card', 'created_at' => new DateTime, 'updated_at' => new DateTime]);
     }
 }
