@@ -1,9 +1,11 @@
 # Laracast
 Diving into more Laravel - Laracast Video's and Playground
 
+Dumping Notes to self along the way -- Ignore ReadMe for now. 
+
  - npm install buble buble-loader vue
 
-# DB
+### DB Info
  - check/setup .env files
  - php artisan make:migration ''
  - php migration
@@ -14,7 +16,7 @@ Diving into more Laravel - Laracast Video's and Playground
  - DB::table('cards')->where('title', 'My New Card')->first();
  - DB::table('cards')->where('title', 'My New Card')->delete();
 
-#start
+### Starting Help
 - composer install
 - check/setup .env files for DB
 - PHP Artisan Key:generate
@@ -23,5 +25,14 @@ Diving into more Laravel - Laracast Video's and Playground
 - php artisan migrate
 
 if working on DB seed
-comoposer dump-autoload
-php artisan db:seed
+- comoposer dump-autoload
+- php artisan db:seed
+or
+- php artisan migrate:refresh --seed
+
+
+Eloquent assumes between Card and Note Model
+hasMany Note::class
+Note class card_id
+references and assumes when using `_id`
+`'class'_id`
