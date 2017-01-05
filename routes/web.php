@@ -25,3 +25,5 @@ Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/cards', 'CardsController@index');
 Route::get('/cards/{id}', 'CardsController@show');
+Route::post('cards/{card}/notes', 'NotesController@store'); //cardsController@addNote or NotesController@store or CardsNotesController@store
+//Full card is passed in above as wildcard {card}

@@ -4,7 +4,7 @@
 
   @foreach($cards as $card)
     <div>
-      {{$card->title}}
+    <a href="<?php echo "cards/" . $card->id ?>">  {{$card->title}}</a>
     </div>
 
   @endforeach
