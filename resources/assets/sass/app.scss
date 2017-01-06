@@ -2,11 +2,11 @@
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
+//bootstrap
+@import "node_modules/bootstrap/scss/bootstrap-flex.scss";
+
 // Variables
 @import "variables";
-
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 // $red: #ff0000;
 // $white: #fff;
@@ -15,27 +15,12 @@
 //   background:$red;
 //   color:$white;
 // }
-//
-// .title{
-//   color:$white;
-// }
-//
-// .about{
-//   width:80%;
-//   margin:0 auto;
-//
-//   color:$white;
-// }
-//
-// .about h1{
-//   margin:0;
-//   padding-top:20px;
-// }
 
-body{
-  background-color:red;
-}
 
 .deleteButton{
   margin-left:10px;
+}
+
+.fa{
+  font-size:18px !important;
 }

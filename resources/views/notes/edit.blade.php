@@ -1,5 +1,7 @@
 @extends ('layout.mainLayout')
 @section('content')
+<div class="row">
+  <div class="col-md-8 offset-md-2">
   <h1> Edit Note </h1>
 
   <form method="POST" action="/notes/{{$note->id}}">
@@ -16,5 +18,8 @@
 
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
   </form>
+
+</div>
+</div>
 
 @stop

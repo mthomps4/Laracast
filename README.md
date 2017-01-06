@@ -6,6 +6,8 @@ Dumping Notes to self along the way -- Ignore ReadMe for now.
  - npm install buble buble-loader vue
  - npm install
  - composer install
+ - npm install --no-optional (fsevents???)
+ - Bootstrap with NPM `@import` Sass File
 host etc for videos
  23.235.33.217 vimeo.com
  23.235.33.217 player.vimeo.com
@@ -24,7 +26,7 @@ host etc for videos
 
 ### Starting Help
 - composer install
-- npm install - gulp vue 
+- npm install - gulp vue
 - check/setup .env files for DB
 - PHP Artisan Key:generate
 - PHP artisan config:cache
