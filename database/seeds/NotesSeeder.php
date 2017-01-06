@@ -12,7 +12,10 @@ class NotesSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         DB::table('notes')->insert(['card_id' => '2', 'body'=> 'Some notes on a card', 'created_at' => new DateTime, 'updated_at' => new DateTime]);
+        DB::table('notes')->insert(['card_id' => '2', 'body'=> 'Im Attatched to a Card', 'created_at' => new DateTime, 'updated_at' => new DateTime]);
         DB::table('notes')->insert(['card_id' => '1', 'body'=> 'Im Attatched to a Card', 'created_at' => new DateTime, 'updated_at' => new DateTime]);
+        DB::table('notes')->insert(['card_id' => '1', 'body'=> 'Another Note', 'created_at' => new DateTime, 'updated_at' => new DateTime]);
+        DB::table('notes')->insert(['card_id' => '1', 'body'=> 'Just Thought of something', 'created_at' => new DateTime, 'updated_at' => new DateTime]);
 
     }
 }

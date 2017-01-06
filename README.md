@@ -14,7 +14,7 @@ host etc for videos
 
 
 ### DB Info
- - check/setup .env files
+ - check/setup .env file
  - php artisan make:migration ''
  - php migration
  - Use DB;
@@ -45,3 +45,12 @@ hasMany Note::class
 Note class card_id
 references and assumes when using `_id`
 `'class'_id`
+
+
+Plugin DUMP
+7. Pigments
+6. Auto-close HTML
+3. TODO-show
+Linter
+Color Picker
+File Icons

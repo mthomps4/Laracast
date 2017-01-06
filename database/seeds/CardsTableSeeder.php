@@ -12,5 +12,7 @@ class CardsTableSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         DB::table('cards')->insert(['title' => 'My New Card', 'created_at' => new DateTime, 'updated_at' => new DateTime]);
+        DB::table('cards')->insert(['title' => 'Second Card', 'created_at' => new DateTime, 'updated_at' => new DateTime]);
+        DB::table('cards')->insert(['title' => 'Third Card', 'created_at' => new DateTime, 'updated_at' => new DateTime]);
     }
 }
