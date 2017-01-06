@@ -8,6 +8,7 @@ use App\Note;
 
 class NotesController extends Controller
 {
+    protected $fillable = ['body'];
     public function store(Request $request, Card $card)      //Card Id has been passed so you can pass in full card.
 
     {
@@ -18,5 +19,17 @@ class NotesController extends Controller
       // $card->notes()->save(new Note(['body' => $request->body]));
       // return redirect()-to(...)
       return back(); //returns back to cards/1
+    }
+
+    public function edit(Note $note)
+    {
+      return view('notes.edit', compact('note'));
+    }
+
+    public function update(Request $request, Note $note)
+    {
+      $note->update($request->all()); //Update everything except token
+      $url = '/cards' . '/' . $note->card_id; //redirects to Card note is from
+      return redirect()->to($url);
     }
 }

@@ -4,7 +4,9 @@ Diving into more Laravel - Laracast Video's and Playground
 Dumping Notes to self along the way -- Ignore ReadMe for now.
 
  - npm install buble buble-loader vue
-host etc for videos 
+ - npm install
+ - composer install
+host etc for videos
  23.235.33.217 vimeo.com
  23.235.33.217 player.vimeo.com
 
@@ -22,6 +24,7 @@ host etc for videos
 
 ### Starting Help
 - composer install
+- npm install - gulp vue 
 - check/setup .env files for DB
 - PHP Artisan Key:generate
 - PHP artisan config:cache
