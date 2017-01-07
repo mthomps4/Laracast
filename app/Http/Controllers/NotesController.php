@@ -21,7 +21,7 @@ class NotesController extends Controller
       // $note->body = $request->body;
       $card->addNote($note, 1); // 1 = hardcoded user Id Auth::user(id);
       //$card->notes()->save($note); //This will save the new note to the Card that was passed through no id matching needed.
-
+      //
       // $card->notes()->save(new Note(['body' => $request->body]));
       // return redirect()-to(...)
       return back(); //returns back to cards/1
