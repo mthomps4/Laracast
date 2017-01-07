@@ -12,6 +12,11 @@ class NotesController extends Controller
     public function store(Request $request, Card $card)      //Card Id has been passed so you can pass in full card.
 
     {
+      $this->validate($request, [
+        'body'=> 'required' //'email' => 'email|unique:users'
+      ]);
+
+
       $note = new Note($request->all());
       // $note->body = $request->body;
       $card->addNote($note, 1); // 1 = hardcoded user Id Auth::user(id);
