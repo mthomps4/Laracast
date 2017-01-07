@@ -15,9 +15,17 @@ class CardsController extends Controller
       return view('cards.index', compact('cards'));
     }
 
-    public function show($id)
+    public function show(Card $card)
     {
-      $card = Card::find($id);
+
+      // Pre User Card INfo
+      // $card = Card::find($id);
+
+      //if not passing full card into show
+      // $card = Card::with('notes.user')->find(1); //get card with notes releationship also with user relationship
+      // return $card;
+
+      $card->load('notes.user');
       return view('cards.show', compact('card'));
     }
 

@@ -7,7 +7,7 @@
         @foreach($card->notes as $note)
         <li class="list-group-item container">
             <div class="row">
-              <p class="col-xs-6 col-sm-8 col-lg-9"> Note: {{$note->body}} </p>
+              <p class="col-xs-6 col-sm-8 col-lg-9"> {{$note->user->username}}:  {{$note->body}} </p>
                   <a roll="button" href="/notes/{{$note->id}}/edit" class="btn btn-warning col-xs flex-xs-middle">   <span class="fa fa-pencil-square-o" aria-hidden="true"></span> </a>
                   <a roll="button" href="" class="btn btn-danger col-xs flex-xs-middle deleteButton"> <span class="fa fa-trash-o" aria-hidden="true"></span> </a>
             </div>

@@ -1,8 +1,7 @@
 <?php
 use Illuminate\Database\Seeder;
-use database\seeds\ContactsTableSeeder;
 
-class DatabaseSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,9 +11,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        $this->call(CardsTableSeeder::class);
-        $this->call(UserSeeder::class);
-        $this->call(NotesSeeder::class);
-
+        DB::table('users')->insert(['username'=> 'Matt', 'email'=>'support@laracast.com', 'password'=>bcrypt('password')]);
     }
 }
