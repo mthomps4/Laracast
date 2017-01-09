@@ -4,13 +4,15 @@
 
   @foreach($posts as $post)
     <div>
-    <h1> {{$post->title}}</h1>
+    <h3>
+      <a href="<?php echo "post/" . $post->id ?>">  {{$post->title}}</a>
+    </h3>
 
     <?php
-      echo html_entity_decode($post->body);
+    //  echo html_entity_decode($post->body);
     ?>
 
-    {{!! html_entity_decode($post->body) !!}}
+    <!-- {!! html_entity_decode($post->body) !!} -->
 
     </div>
 

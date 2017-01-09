@@ -34,3 +34,5 @@ Route::patch('notes/{note}', 'NotesController@update');
 
 Route::get('blog', 'blogpostsController@index');
 Route::post('blogpost', 'blogpostsController@store');
+
+Route::get('post/{blogpost}', 'blogpostsController@show');

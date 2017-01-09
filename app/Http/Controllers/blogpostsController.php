@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\blogpost;
+use DB;
+
 
 class blogpostsController extends Controller
 {
@@ -26,5 +28,16 @@ class blogpostsController extends Controller
     {
       $posts = blogpost::All();
       return view('blog.index', compact('posts'));
+    }
+
+    public function show(blogpost $blogpost)
+    {
+      //if not passing full card into show
+      // $blogpost = blogpost::with('comments')->find(1); //get card with notes releationship also with user relationship
+      // return $blogpost;
+
+      $blogpost->load('comments');
+      
+      return view('blog.post', compact('blogpost'));
     }
 }
