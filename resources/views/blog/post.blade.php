@@ -40,4 +40,17 @@
       </form>
     </div>
 
+<hr />
+
+    <?php
+      foreach($blogpost->tags as $tag)
+      {
+        echo $tag;
+      }
+     ?>
+
+<hr />
+
+    <h4>Add Tags</h4>
+
 @stop

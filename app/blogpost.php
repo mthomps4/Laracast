@@ -15,4 +15,10 @@ class blogpost extends Model
   {
     return $this->comments()->save($comment);
   }
+
+  public function tags()
+  {
+    return $this->belongsToMany(Tag::class, 'blogpost_tag', 'blogpost_id', 'tag_id')->withTimestamps();
+  }
+
 }
