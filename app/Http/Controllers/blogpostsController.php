@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\blogpost;
+use App\tag;
 use DB;
 
 
@@ -15,8 +16,34 @@ class blogpostsController extends Controller
       $post = new blogpost();
       $post->title = $request->title;
       $post->body = htmlentities($request->body);
-      // $card->created_at = new DateTime;
-      // $card->updated_at = new DateTime;
+
+      //Tags
+      //$masterTagList = Tag::All()->pluck('name');
+      $masterTagList = Tag::All();
+      //New Blog Post Tag Requests
+      $tagInput = $request->tags;
+      $tagInput = strtolower($tagInput);
+
+      $NewPostTags = explode('#', $tagInput);
+      $NewPostTags = array_filter($NewPostTags);
+      $NewPostTags = array_map('trim', $NewPostTags);
+
+      return 2+2;
+
+      foreach($NewPostTags as $Tag){
+          //firstOrCreate
+          //firstOrNew
+          //updateOrCreate
+          //https://laravel.com/docs/5.3/eloquent
+      }
+
+      //Check if Tag Exists
+        //IF Update Tag Count
+        //Else create Tag Count = 1
+      //Add to Tag List
+      //Attatch Tags to Blogpost
+      
+      //$post->tags->attach($tags);
 
       $post->save();
 

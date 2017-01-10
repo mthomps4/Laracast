@@ -51,6 +51,4 @@
 
 <hr />
 
-    <h4>Add Tags</h4>
-
 @stop

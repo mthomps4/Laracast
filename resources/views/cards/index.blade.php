@@ -41,8 +41,13 @@
           <textarea name="body" class="form-control"> </textarea>
         </div>
 
+        <div class="form-group row">
+          <label for="tags"> Tags: </label>
+          <input name="tags" class="form-control" placeholder="#somethingAwesome #somethingCool" />
+        </div>
+
         <div class="form-group">
-          <button type="submit" class="btn btn-primary">Add Note</button>
+          <button type="submit" class="btn btn-primary">Add Blog Post</button>
         </div>
 
         <input type="hidden" name="_token" value="{{ csrf_token() }}">

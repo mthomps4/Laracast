@@ -15,6 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CardsTableSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(NotesSeeder::class);
-
+        $this->call(blogTableSeeder::class);
     }
 }
