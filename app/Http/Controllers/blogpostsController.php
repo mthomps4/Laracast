@@ -32,12 +32,8 @@ class blogpostsController extends Controller
 
     public function show(blogpost $blogpost)
     {
-      //if not passing full card into show
-      // $blogpost = blogpost::with('comments')->find(1); //get card with notes releationship also with user relationship
-      // return $blogpost;
-
       $blogpost->load('comments');
-      
+
       return view('blog.post', compact('blogpost'));
     }
 }

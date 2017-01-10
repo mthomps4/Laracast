@@ -9,6 +9,7 @@ use App\Note;
 class NotesController extends Controller
 {
     protected $fillable = ['body'];
+
     public function store(Request $request, Card $card)      //Card Id has been passed so you can pass in full card.
 
     {

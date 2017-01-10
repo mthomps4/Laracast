@@ -8,11 +8,9 @@ use App\comment;
 
 class CommentsController extends Controller
 {
-    //
     protected $fillable = ['body', 'user_name'];
 
     public function store(Request $request, blogpost $blogpost)      //Card Id has been passed so you can pass in full card.
-
     {
       $this->validate($request, [
         'body'=> 'required', //'email' => 'email|unique:users'
@@ -23,5 +21,4 @@ class CommentsController extends Controller
       $blogpost->addComment($comment);
       return back(); //returns back to cards/1
     }
-
 }
