@@ -1,13 +1,7 @@
 @extends('layout.mainLayout')
 @section('content')
-  <h1> Blog Posts
-  <?php
-    if(isset($tagName)){
-      echo "-  #";
-      echo $tagName;
-    }
-   ?>
-   </h1>
+  <h1> Blog Posts </h1>
+
   @foreach($posts as $post)
     <div>
     <h3>

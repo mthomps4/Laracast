@@ -42,12 +42,19 @@
 
 <hr />
 
+<p>
+  Tags:
     <?php
       foreach($blogpost->tags as $tag)
       {
-        echo $tag;
+        echo "<a href='/tag/$tag->id/posts/'>";
+        echo "#";
+        echo $tag->name;
+        echo "</a>";
+        echo "  ";
       }
      ?>
+</p>
 
 <hr />
 

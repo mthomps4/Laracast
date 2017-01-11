@@ -35,5 +35,6 @@ Route::patch('notes/{note}', 'NotesController@update');
 Route::get('blog', 'blogpostsController@index');
 Route::post('blogpost', 'blogpostsController@store');
 Route::get('post/{blogpost}', 'blogpostsController@show');
-
 Route::post('post/{blogpost}/comment', 'CommentsController@store');
+
+Route::get('/tag/{tag}/posts', 'tagsController@getByTag');
