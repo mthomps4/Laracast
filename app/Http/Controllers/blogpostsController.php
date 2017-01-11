@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\blogpost;
 use App\tag;
+use App\category;
 use DB;
 
 
@@ -40,6 +41,27 @@ class blogpostsController extends Controller
           $post->tags()->attach($TagEntry);
       }
 
+
+      //Categories
+      $masterCategoryList = Category::All();
+      $CategoryInput = $request->categories;
+      $CategoryInput = strtolower($CategoryInput);
+
+      $NewPostCategories = explode('#', $CategoryInput);
+      $NewPostCategories = array_filter($NewPostCategories);
+      $NewPostCategories = array_map('trim', $NewPostCategories);
+
+      foreach($NewPostCategories as $Category){
+          $CategoryEntry = Category::firstOrNew(['name' => $Category]);
+          $CategoryEntry->categoryCount += 1;
+          echo $CategoryEntry;
+          $CategoryEntry->save();
+          echo "<br />";
+          echo "<br />";
+          echo "<br />";
+          $post->category()->attach($CategoryEntry);
+      }
+
       return back();
     }
 
@@ -48,13 +70,15 @@ class blogpostsController extends Controller
     {
       $posts = blogpost::All();
       $tags = tag::All();
-      return view('blog.index', compact('posts', 'tags'));
+      $categories = category::All();
+      return view('blog.index', compact('posts', 'tags', 'categories'));
     }
 
     public function show(blogpost $blogpost)
     {
       $blogpost->load('comments');
       $blogpost->load('tags');
+      $blogpost->load('categories');
       return view('blog.post', compact('blogpost'));
     }
 

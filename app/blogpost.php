@@ -20,5 +20,11 @@ class blogpost extends Model
   {
     return $this->belongsToMany(Tag::class)->withTimestamps();
   }
-//, 'blogpost_tag', 'blogpost_id', 'tag_id'
+
+  public function categories()
+  {
+    return $this->belongsToMany(Category::class)->withTimestamps();
+  }
+
+
 }

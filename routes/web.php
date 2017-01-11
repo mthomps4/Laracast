@@ -38,3 +38,4 @@ Route::get('post/{blogpost}', 'blogpostsController@show');
 Route::post('post/{blogpost}/comment', 'CommentsController@store');
 
 Route::get('/tag/{tag}/posts', 'tagsController@getByTag');
+Route::get('/category/{category}/posts/', 'categoryController@getByCategory');

@@ -46,6 +46,11 @@
           <input name="tags" class="form-control" placeholder="#somethingAwesome #somethingCool" />
         </div>
 
+        <div class="form-group row">
+          <label for="categories"> Categories: </label>
+          <input name="categories" class="form-control" placeholder="#Topic1 #Field2" />
+        </div>
+
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Add Blog Post</button>
         </div>

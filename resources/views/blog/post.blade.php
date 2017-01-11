@@ -58,4 +58,20 @@
 
 <hr />
 
+<p>
+  Categories:
+    <?php
+      foreach($blogpost->categories as $category)
+      {
+        echo "<a href='/category/$category->id/posts/'>";
+        echo "#";
+        echo $category->name;
+        echo "</a>";
+        echo "  ";
+      }
+     ?>
+</p>
+
+<hr />
+
 @stop
