@@ -12,7 +12,7 @@
     <h3>Comments:</h3>
     @foreach($blogpost->comments as $comment)
       <ul>
-        <li>{{$comment}}</li>
+        <li><b>{{$comment->user_name}}:</b> {{$comment->body}}</li>
       </ul>
     @endforeach
 

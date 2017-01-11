@@ -59,7 +59,7 @@ class blogpostsController extends Controller
           echo "<br />";
           echo "<br />";
           echo "<br />";
-          $post->category()->attach($CategoryEntry);
+          $post->categories()->attach($CategoryEntry);
       }
 
       return back();
