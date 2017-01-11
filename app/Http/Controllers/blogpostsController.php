@@ -16,6 +16,7 @@ class blogpostsController extends Controller
       $post = new blogpost();
       $post->title = $request->title;
       $post->body = htmlentities($request->body);
+      $post->save();
 
       //Tags
       //$masterTagList = Tag::All()->pluck('name');
@@ -28,25 +29,20 @@ class blogpostsController extends Controller
       $NewPostTags = array_filter($NewPostTags);
       $NewPostTags = array_map('trim', $NewPostTags);
 
-      return 2+2;
-
       foreach($NewPostTags as $Tag){
-          //firstOrCreate
-          //firstOrNew
-          //updateOrCreate
-          //https://laravel.com/docs/5.3/eloquent
+          $TagEntry = Tag::firstOrNew(['name' => $Tag]);
+          $TagEntry->tagCount += 1;
+          echo $TagEntry;
+          $TagEntry->save();
+          echo "<br />";
+          echo "<br />";
+          echo "<br />";
+          $post->tags()->attach($TagEntry);
       }
 
-      //Check if Tag Exists
-        //IF Update Tag Count
-        //Else create Tag Count = 1
-      //Add to Tag List
       //Attatch Tags to Blogpost
-      
-      //$post->tags->attach($tags);
 
-      $post->save();
-
+      return 2+2;
       return back();
     }
 
