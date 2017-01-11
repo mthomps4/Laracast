@@ -47,7 +47,8 @@ class blogpostsController extends Controller
     public function index()
     {
       $posts = blogpost::All();
-      return view('blog.index', compact('posts'));
+      $tags = tag::All();
+      return view('blog.index', compact('posts', 'tags'));
     }
 
     public function show(blogpost $blogpost)
@@ -55,15 +56,6 @@ class blogpostsController extends Controller
       $blogpost->load('comments');
       $blogpost->load('tags');
       return view('blog.post', compact('blogpost'));
-    }
-
-    public function getByTag(Tag $tag)
-    {
-        echo $tag;
-        $tagSearch = Tag::find($tag->id);
-        return $tagSearch;
-        var_dump($tagSearch->blogposts);
-        return 2+2;
     }
 
 }

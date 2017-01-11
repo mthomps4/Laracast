@@ -18,10 +18,24 @@
     //  echo html_entity_decode($post->body);
     ?>
 
-    {!! html_entity_decode($post->body) !!}
-
+    <!-- {!! html_entity_decode($post->body) !!} -->
     </div>
-
   @endforeach
+
+  <div>
+  <h4> Tags List  </h4>
+    <?php
+      foreach($tags as $tag){
+        echo "<a href='/tag/$tag->id/posts/'>";
+        echo "#";
+        echo $tag->name;
+        echo "</a>";
+        echo "(" . $tag->tagCount . ")";
+        echo "<br />";
+      }
+     ?>
+
+  </div>
+
 
 @stop

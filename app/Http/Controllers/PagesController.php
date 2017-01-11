@@ -15,4 +15,5 @@ class PagesController extends Controller
       $people = ['matt', 'tom'];
       return view('pages.about', ['people'=>$people]);
     }
+
 }
