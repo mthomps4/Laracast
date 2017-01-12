@@ -71,7 +71,13 @@ class blogpostsController extends Controller
       $posts = blogpost::All();
       $tags = tag::All();
       $categories = category::All();
-      return view('blog.index', compact('posts', 'tags', 'categories'));
+      $postsByDate = blogpost::orderBy('created_at')->get();
+
+      $posts_by_date = blogpost::all()->groupBy(function($date) {
+      return $date->created_at->format('F-Y');
+      });
+
+      return view('blog.index', compact('posts', 'tags', 'categories', 'postsByDate', 'posts_by_date'));
     }
 
     public function show(blogpost $blogpost)
